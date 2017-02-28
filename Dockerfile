@@ -8,6 +8,15 @@ RUN add-apt-repository ppa:vajdics/netbeans-installer && \
 						libxtst-dev && \ 
 	apt-get install -y netbeans-installer && \
 	apt-get clean
-#ADD run /usr/local/bin/netbeans
-#CMD /usr/local/bin/netbeans
-CMD /bin/bash
+
+RUN mkdir -p /home/netbeansdev && \
+    echo "netbeansdev:x:1000:1000:Developer,,,:/home/netbeansdev:/bin/bash" >> /etc/passwd && \
+    echo "netbeansdev:x:1000:" >> /etc/group && \
+    echo "netbeansdev ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/netbeansdev && \
+    chmod 0440 /etc/sudoers.d/netbeansdev && \
+    chown netbeansdev:netbeansdev -R /home/netbeansdev
+USER netbeansdev
+ENV HOME /home/netbeansdev 
+WORKDIR /home/netbeansdev
+
+CMD /usr/bin/netbeans
