@@ -11,7 +11,7 @@ RUN apt-get -y update && \
 	echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
 	apt-get -y update && \ 
 	apt-get install -y oracle-java8-installer && \
-	apt install -y netbeans-installer && \
+	apt-get install -y netbeans-installer && \
 	apt-get clean
 ADD run /usr/local/bin/netbeans
 CMD /usr/local/bin/netbeans
