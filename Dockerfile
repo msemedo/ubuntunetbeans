@@ -7,6 +7,7 @@ RUN apt-get -y update && \
 						libxrender-dev \
 						libxtst-dev && \ 
 	add-apt-repository ppa:webupd8team/java && \
+	add-apt-repository ppa:vajdics/netbeans-installer && \
 	echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
 	echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
 	apt-get -y update && \ 
