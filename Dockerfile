@@ -1,4 +1,4 @@
-FROM msemedo/ubuntuoraclejava8:latest
+FROM msemedo/ubuntuoraclejava8cpp:latest
 RUN add-apt-repository ppa:vajdics/netbeans-installer && \
 	apt-get -y update && \
 	apt-get -y upgrade && \
