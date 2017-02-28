@@ -9,5 +9,5 @@ RUN add-apt-repository ppa:vajdics/netbeans-installer && \
 	apt-get install -y netbeans-installer && \
 	apt-get clean
 ADD run /usr/local/bin/netbeans
-CMD /usr/local/bin/netbeans
-#CMD /bin/bash
+#CMD /usr/local/bin/netbeans
+CMD /bin/bash
