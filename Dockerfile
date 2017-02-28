@@ -8,6 +8,6 @@ RUN add-apt-repository ppa:vajdics/netbeans-installer && \
 						libxtst-dev && \ 
 	apt-get install -y netbeans-installer && \
 	apt-get clean
-ADD run /usr/local/bin/netbeans
+#ADD run /usr/local/bin/netbeans
 #CMD /usr/local/bin/netbeans
 CMD /bin/bash
